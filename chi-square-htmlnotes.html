@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.505">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kamarul Ariffin Mansor">
+
+<title>Chi Square</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="chi-square-htmlnotes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="chi-square-htmlnotes_files/libs/quarto-html/quarto.js"></script>
+<script src="chi-square-htmlnotes_files/libs/quarto-html/popper.min.js"></script>
+<script src="chi-square-htmlnotes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="chi-square-htmlnotes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="chi-square-htmlnotes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="chi-square-htmlnotes_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="chi-square-htmlnotes_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="chi-square-htmlnotes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="chi-square-htmlnotes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="chi-square-htmlnotes_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme">
+<link href="chi-square-htmlnotes_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"> <span class="header-section-number">1</span> <strong>Introduction</strong></a></li>
+  <li><a href="#the-logic-of-chi-square" id="toc-the-logic-of-chi-square" class="nav-link" data-scroll-target="#the-logic-of-chi-square"> <span class="header-section-number">2</span> <strong>The Logic of Chi Square</strong></a>
+  <ul class="collapse">
+  <li><a href="#the-chi-square-test-for-independence" id="toc-the-chi-square-test-for-independence" class="nav-link" data-scroll-target="#the-chi-square-test-for-independence"> <span class="header-section-number">2.1</span> The chi square test for independence</a></li>
+  </ul></li>
+  <li><a href="#bivariate-tables" id="toc-bivariate-tables" class="nav-link" data-scroll-target="#bivariate-tables"> <span class="header-section-number">3</span> <strong>Bivariate Tables</strong></a></li>
+  <li><a href="#bivariate-tables-cont." id="toc-bivariate-tables-cont." class="nav-link" data-scroll-target="#bivariate-tables-cont."> <span class="header-section-number">4</span> <strong>Bivariate Tables, cont.</strong></a></li>
+  <li><a href="#bivariate-tables-cont.-1" id="toc-bivariate-tables-cont.-1" class="nav-link" data-scroll-target="#bivariate-tables-cont.-1"> <span class="header-section-number">5</span> <strong>Bivariate Tables, cont.</strong></a></li>
+  <li><a href="#independence" id="toc-independence" class="nav-link" data-scroll-target="#independence"> <span class="header-section-number">6</span> <strong>Independence</strong></a></li>
+  <li><a href="#computation-of-chi-square" id="toc-computation-of-chi-square" class="nav-link" data-scroll-target="#computation-of-chi-square"> <span class="header-section-number">7</span> <strong>Computation of Chi Square</strong></a></li>
+  <li><a href="#computation-cont." id="toc-computation-cont." class="nav-link" data-scroll-target="#computation-cont."> <span class="header-section-number">8</span> <strong>Computation, cont.</strong></a></li>
+  <li><a href="#computation-cont.-1" id="toc-computation-cont.-1" class="nav-link" data-scroll-target="#computation-cont.-1"> <span class="header-section-number">9</span> <strong>Computation, cont.</strong></a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"> <span class="header-section-number">10</span> Examples:</a>
+  <ul class="collapse">
+  <li><a href="#where-chi-square-test-can-be-applied" id="toc-where-chi-square-test-can-be-applied" class="nav-link" data-scroll-target="#where-chi-square-test-can-be-applied"> <span class="header-section-number">10.1</span> Where Chi-Square Test can be applied?</a></li>
+  </ul></li>
+  <li><a href="#how-to-write-the-hypothesis" id="toc-how-to-write-the-hypothesis" class="nav-link" data-scroll-target="#how-to-write-the-hypothesis"> <span class="header-section-number">11</span> How to write the hypothesis?</a></li>
+  <li><a href="#working-example" id="toc-working-example" class="nav-link" data-scroll-target="#working-example"> <span class="header-section-number">12</span> Working Example</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chi Square</h1>
+<p class="subtitle lead">Test of Independence</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kamarul Ariffin Mansor </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> <strong>Introduction</strong></h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Chi square test is the single most frequently used test of hypothesis in the social sciences<br>
+</li>
+<li>It is a nonparametric test, so requires no assumption about the exact shape of the population distribution<br>
+</li>
+<li>It is appropriate for nominally measured variables<br>
+</li>
+<li>Can be used in the two-sample case, but can also be used when there are more than two samples<br>
+</li>
+</ul>
+</div>
+</section>
+<section id="the-logic-of-chi-square" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-logic-of-chi-square"><span class="header-section-number">2</span> <strong>The Logic of Chi Square</strong></h2>
+<section id="the-chi-square-test-for-independence" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="the-chi-square-test-for-independence"><span class="header-section-number">2.1</span> The chi square test for independence</h3>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><p>Two variables are independent if, for all cases in the sample, the classification of a case into a particular category of one variable has no effect on the probability that the case will fall into any particular category of the second variable.</p></li>
+<li><p>To conduct a chi square test, the variables must first be organized into a bivariate table<br>
+</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="bivariate-tables" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="bivariate-tables"><span class="header-section-number">3</span> <strong>Bivariate Tables</strong></h2>
+<p><strong>The idea of independence can be seen in bivariate tables</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>Bivariate tables display joint classification of the cases on two variables<br>
+</li>
+<li>The categories of the independent variable are used as column headings<br>
+</li>
+<li>The categories of the dependent variable are used as row headings<br>
+</li>
+<li>The marginals are the univariate frequency distributions for each variable<br>
+</li>
+</ul>
+</div>
+</section>
+<section id="bivariate-tables-cont." class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="bivariate-tables-cont."><span class="header-section-number">4</span> <strong>Bivariate Tables, cont.</strong></h2>
+<div class="incremental">
+<ul class="incremental">
+<li>To find the number of cells in a table, multiply the number of categories of the independent variable by the number of categories of the dependent variable<br>
+</li>
+<li>A bivariate table in which both variables have three categories has nine cells<br>
+</li>
+<li>If two variables are independent, the cell frequencies will be determined by random chance<br>
+</li>
+</ul>
+</div>
+</section>
+<section id="bivariate-tables-cont.-1" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="bivariate-tables-cont.-1"><span class="header-section-number">5</span> <strong>Bivariate Tables, cont.</strong></h2>
+<div class="incremental">
+<ul class="incremental">
+<li>The null hypothesis states that the variables are independent<br>
+</li>
+<li>If the null hypothesis is true, the expected cell frequencies are what we would expect to find if only random chance were operating<br>
+</li>
+<li>The actual frequencies would differ little from the expected frequencies<br>
+</li>
+<li>Therefore, it is still the hypothesis of no difference, but this time the difference measured is between the observed frequencies and the expected frequencies</li>
+</ul>
+</div>
+</section>
+<section id="independence" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="independence"><span class="header-section-number">6</span> <strong>Independence</strong></h2>
+<div class="incremental">
+<ul class="incremental">
+<li>When the variables are independent of each other, there should be little difference between the observed frequencies and the expected frequencies<br>
+</li>
+<li>These slight differences would be due to chance alone<br>
+</li>
+<li>If the null is false (we reject the null), there should be large differences between the two</li>
+</ul>
+</div>
+</section>
+<section id="computation-of-chi-square" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="computation-of-chi-square"><span class="header-section-number">7</span> <strong>Computation of Chi Square</strong></h2>
+<p>You need to compute a test statistic:</p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li>Chi Square (obtained)<br>
+</li>
+<li>Then you need to find Chi Square (critical) to compare with your test statistic<br>
+</li>
+<li>Chi Square (critical) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom<br>
+</li>
+<li>degrees of freedom, <span class="math inline">df</span> = (row - 1)(col - 1)<br>
+</li>
+</ol>
+</div>
+</section>
+<section id="computation-cont." class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="computation-cont."><span class="header-section-number">8</span> <strong>Computation, cont.</strong></h2>
+<div class="incremental">
+<p>The Chi Square statistic is</p>
+<ol class="incremental" type="1">
+<li><p>the sum over all cells of</p></li>
+<li><p>the squared difference between the obtained value and the expected value, which is then</p></li>
+<li><p>divided by the expected frequency.<br>
+</p></li>
+</ol>
+</div>
+<p>Formula 1 for Chi Square (obtained):</p>
+<div class="aside">
+<p>Formula 1</p>
+</div>
+<p><span class="math display">
+\chi^{2} = \sum \frac{(O - E)^{2}}{E}
+</span></p>
+</section>
+<section id="computation-cont.-1" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="computation-cont.-1"><span class="header-section-number">9</span> <strong>Computation, cont.</strong></h2>
+<div class="incremental">
+<ul class="incremental">
+<li>You have to calculate an expected frequency for each cell in the table<br>
+</li>
+<li>Since marginals will be unequal in most cases, you need Formula 2 to compute the expected frequencies:<br>
+</li>
+</ul>
+</div>
+<div class="aside">
+<p>Formula 2</p>
+</div>
+<p><span class="math display">
+E_{i,j} = \frac{(Row_{i}\ Total) * (Column_{j}\ Total)}{Grand\ Total}
+</span></p>
+</section>
+<section id="examples" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="examples"><span class="header-section-number">10</span> Examples:</h2>
+<section id="where-chi-square-test-can-be-applied" class="level3" data-number="10.1">
+<h3 data-number="10.1" class="anchored" data-anchor-id="where-chi-square-test-can-be-applied"><span class="header-section-number">10.1</span> Where Chi-Square Test can be applied?</h3>
+<p>The following are situations where we can use the Chi-Square test:</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Testing if there is an association between gender and preferred learning method (online/books).<br>
+</li>
+<li>Testing if there is an association between political ideology and opinion on tax reform.<br>
+</li>
+<li>Testing if there is an association between marital status and level of education.<br>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="how-to-write-the-hypothesis" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="how-to-write-the-hypothesis"><span class="header-section-number">11</span> How to write the hypothesis?</h2>
+<p>The Chi-Square tests the null hypothesis:</p>
+<p><span class="math inline">H_{0}</span> : The two variables are independent (i.e.&nbsp;there is no association)</p>
+<p>versus the alternative hypothesis:</p>
+<p><span class="math inline">H_{1}</span> : The two variables are not independent (i.e.&nbsp;there is an association)</p>
+<p>Therefore, when we reject the null hypothesis, we believe that the two variables affect each other, even though the test does not tell us how this association occurs between categories.</p>
+</section>
+<section id="working-example" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="working-example"><span class="header-section-number">12</span> Working Example</h2>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Solution</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Interpretation</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><font face="Bedrock" size="5"> Suppose that the state legislature is considering a bill to lower the legal drinking age to 18. A political scientist is interested in whether there is a relationship between party affiliation and attitude toward the bill. A random sample of 150 registered republicans and 200 registered democrats are asked their opinion about the proposed bill. </font></p>
+</div><div class="column" style="width:40%;">
+<center>
+<img src="images/chi-sq-ex-1.png" class="img-fluid">
+</center>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="columns">
+<div class="column" style="width:50%;">
+<font face="Bedrock" size="4">
+<center>
+<p>
+Calculating the Expected Value for a Particular Cell <br> Ex: <span class="math inline">Cell_{11}\ =\ \frac{150 * 130}{350}\ =\ 55.7</span>
+</p>
+</center>
+</font>
+<center>
+<img src="images/chi-sq-ex-2.png" class="img-fluid">
+</center>
+</div><div class="column" style="width:50%;">
+<font face="Bedrock" size="4">
+<center>
+<p>
+Numbers in Black are obtained (<span class="math inline">f_{o}</span>) <br> Numbers in Purple are expected (<span class="math inline">f_{e}</span>)
+</p>
+</center>
+</font><p><font face="Bedrock" size="4"></font></p>
+<center>
+<img src="images/chi-sq-ex-3.png" class="img-fluid">
+</center>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img src="images/chi-sq-ex-4.png" class="img-fluid"></p>
+</div><div class="column" style="width:60%;">
+<font face="Bedrock" size="4">
+<p>
+The calculated value for the chi square statistic is compared to the critical value found in Table. <br> <span class="math inline">\chi^{2}=5.62+0.27+3.11+4.22+0.20+2.33=15.75</span>
+</p>
+</font><p><font face="Bedrock" size="4"></font></p>
+</div>
+</div>
+<font face="Bedrock" size="4">
+<p>
+<strong>Note:</strong> <em>The distribution of the Chi Square Statistic is not normal and the critical values are only on one side. If the obtained values are close to the expected value, then the chi square statistic will approach 0. As the obtained value is different from the expected, the value of chi square will increase. This is reflected in the values found in Table.</em> <br> The Degrees of Freedom for the Chi Square Test of Independence is the product of the number of rows minus 1 times the number of columns minus 1. <br> In our study, we had two rows (Republicans and Democrats) and three columns (For, Undecided, Against). Therefore, the degrees of freedom for our study is (2-1)(3-1) = 1(2) = 2. Using an a of .05, the critical value from Table would be 5.991 Since our calculated chi square is 15.75, we conclude that there <strong>IS</strong> a relationship between political party and opinion on lowering the drinking age, thereby rejecting the Null Hypothesis
+</p>
+</font><p><font face="Bedrock" size="4"></font></p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+    } else {
+      disableStylesheet(alternateStylesheets);
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

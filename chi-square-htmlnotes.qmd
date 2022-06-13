@@ -1,0 +1,213 @@
+---
+title: "Chi Square"
+subtitle: "Test of Independence"
+author: "Kamarul Ariffin Mansor"
+format:
+  html:
+    theme:
+      light: sandstone
+      dark: darkly
+    toc: true
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    html-math-method: katex
+    css: styles.css
+---
+
+## **Introduction**
+  
+::: incremental
+- Chi square test is the single most frequently used test of hypothesis in the social sciences  
+- It is a nonparametric test, so requires no assumption about the exact shape of the population distribution  
+- It is appropriate for nominally measured variables  
+- Can be used in the two-sample case, but can also be used when there are more than two samples  
+:::
+
+## **The Logic of Chi Square**  
+### The chi square test for independence  
+
+::: incremental
+1. Two variables are independent if, for all cases in the sample, the classification of a case into a particular category of one variable has no effect on the probability that the case will fall into any particular category of the second variable.  
+
+2. To conduct a chi square test, the variables must first be organized into a bivariate table  
+:::
+
+## **Bivariate Tables**  
+**The idea of independence can be seen in bivariate tables**  
+
+::: incremental  
+- Bivariate tables display joint classification of the cases on two variables  
+- The categories of the independent variable are used as column headings  
+- The categories of the dependent variable are used as row headings  
+- The marginals are the univariate frequency distributions for each variable  
+:::
+
+## **Bivariate Tables, cont.**  
+
+::: incremental  
+- To find the number of cells in a table, multiply the number of categories of the independent variable by the number of categories of the dependent variable  
+- A bivariate table in which both variables have three categories has nine cells  
+- If two variables are independent, the cell frequencies will be determined by random chance  
+:::
+
+## **Bivariate Tables, cont.**  
+
+::: incremental  
+- The null hypothesis states that the variables are independent  
+- If the null hypothesis is true, the expected cell frequencies are what we would expect to find if only random chance were operating  
+- The actual frequencies would differ little from the expected frequencies  
+- Therefore, it is still the hypothesis of no difference, but this time the difference measured is between the observed frequencies and the expected frequencies
+:::
+
+## **Independence**  
+
+::: incremental  
+- When the variables are independent of each other, there should be little difference between the observed frequencies and the expected frequencies  
+- These slight differences would be due to chance alone  
+- If the null is false (we reject the null), there should be large differences between the two
+:::
+
+## **Computation of Chi Square**  
+
+You need to compute a test statistic:  
+
+::: incremental  
+1. Chi Square (obtained)  
+2. Then you need to find Chi Square (critical) to compare with your test statistic  
+3. Chi Square (critical) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom  
+4. degrees of freedom, $df$ = (row - 1)(col - 1)  
+:::
+
+## **Computation, cont.**  
+
+::: incremental
+The Chi Square statistic is  
+
+1. the sum over all cells of  
+
+2. the squared difference between the obtained value and the expected value, which is then  
+
+3. divided by the expected frequency.  
+:::
+
+Formula 1 for Chi Square (obtained):  
+
+::: aside
+Formula 1
+:::
+
+$$
+\chi^{2} = \sum \frac{(O - E)^{2}}{E}
+$$
+
+## **Computation, cont.**  
+
+::: incremental
+- You have to calculate an expected frequency for each cell in the table  
+- Since marginals will be unequal in most cases, you need Formula 2 to compute the expected frequencies:  
+:::
+
+::: aside
+Formula 2
+:::
+$$
+E_{i,j} = \frac{(Row_{i}\ Total) * (Column_{j}\ Total)}{Grand\ Total}
+$$
+## Examples:  
+### Where Chi-Square Test can be applied?  
+
+The following are situations where we can use the Chi-Square test:  
+
+::: incremental  
+- Testing if there is an association between gender and preferred learning method (online/books).  
+- Testing if there is an association between political ideology and opinion on tax reform.  
+- Testing if there is an association between marital status and level of education.  
+:::
+
+## How to write the hypothesis?  
+
+The Chi-Square tests the null hypothesis:  
+
+$H_{0}$ : The two variables are independent (i.e. there is no association)  
+
+versus the alternative hypothesis:  
+	
+$H_{1}$ : The two variables are not independent (i.e. there is an association)  
+
+Therefore, when we reject the null hypothesis, we believe that the two variables affect each other, even though the test does not tell us how this association occurs between categories.  
+
+## Working Example  
+
+::: {.panel-tabset}  
+
+### Question  
+
+:::: {.columns}
+
+::: {.column width="60%"}
+<font face = "Bedrock" size = "5">
+Suppose that the state legislature is considering a bill to lower the legal drinking age to 18. A political scientist is interested in whether there is a relationship between party affiliation and attitude toward the bill. A random sample of 150 registered republicans and 200 registered democrats are asked their opinion about the proposed bill.
+</font>  
+:::
+
+::: {.column width="40%"}
+<center>
+![](images/chi-sq-ex-1.png){width="35%}
+</center>
+:::
+
+::::
+
+### Solution  
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<font face = "Bedrock" size = "4">
+<center><p>
+Calculating the Expected Value for a Particular Cell <br>
+Ex: $Cell_{11}\ =\ \frac{150 * 130}{350}\ =\ 55.7$  
+</p></center></font>
+<center>
+![](images/chi-sq-ex-2.png){width="45%}
+</center>
+:::
+
+::: {.column width="50%"}
+<font face = "Bedrock" size = "4">
+<center><p>
+Numbers in Black are obtained ($f_{o}$) <br>
+Numbers in Purple are expected ($f_{e}$)  
+</p></center></font>
+
+<center>
+![](images/chi-sq-ex-3.png){width="45%}
+</center>
+:::
+
+::::
+
+### Interpretation  
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/chi-sq-ex-4.png){width="35%}
+:::
+
+::: {.column width="60%"}
+<font face = "Bedrock" size = "4">
+<p>The calculated value for the chi square statistic is compared to the critical value found in Table. <br>
+$\chi^{2}=5.62+0.27+3.11+4.22+0.20+2.33=15.75$
+</p></font>  
+:::
+
+::::
+
+<font face = "Bedrock" size = "4">
+<p>**Note:** *The distribution of the Chi Square Statistic is not normal and the critical values are only on one side.  If the obtained values are close to the expected value, then the chi square statistic will approach 0.  As the obtained value is different from the expected, the value of chi square will increase.  This is reflected in the values found in Table.* <br>
+The Degrees of Freedom for the Chi Square Test of Independence is the product of the number of rows minus 1 times the number of columns minus 1. <br>
+In our study, we had two rows (Republicans and Democrats) and three columns (For, Undecided, Against). Therefore, the degrees of freedom for our study is (2-1)(3-1) = 1(2) = 2. Using an a of .05, the critical value from Table would be 5.991 Since our calculated chi square is 15.75, we conclude that there **IS** a relationship between political party and opinion on lowering the drinking age, thereby rejecting the Null Hypothesis</p></font>
+
+:::  

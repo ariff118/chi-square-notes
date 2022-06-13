@@ -346,14 +346,48 @@
 <div>
 <ol type="1">
 <li class="fragment"><p>Two variables are independent if, for all cases in the sample, the classification of a case into a particular category of one variable has no effect on the probability that the case will fall into any particular category of the second variable.</p></li>
-<li class="fragment"><p>To conduct a chi square test, the variables must first be organized into a bivariate table<br>
-</p></li>
+<li class="fragment"><p>To conduct a chi square test, the variables must first be organized into a bivariate table, a.k.a. <em>contingency tables</em>.</p></li>
+<li class="fragment"><p>A contingency table is used to investigate whether two traits or characteristics are related. Each observation is classified according to two criteria. We use the usual hypothesis testing procedure.</p></li>
 </ol>
+</div>
+</section>
+<section id="application-of-chi-square-test-of-independence" class="slide level2" data-background-image="images/bg-blank-uitm.png" data-background-position="center" data-background-size="90%" data-background-repeat="no-repeat">
+<h2>Application of Chi-Square Test of Independence</h2>
+<font face="Bedrock" size="5">
+<p>
+We can use the chi-square statistic to formally test for a relationship between two nominal-scaled variables. To put it another way, Is one variable <em>independent</em> of the other?
+</p>
+</font><p><font face="Bedrock" size="5"></font></p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Situation 1</a></li><li><a href="#tabset-1-2">Situation 2</a></li><li><a href="#tabset-1-3">Situation 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<font face="Bedrock" size="5">
+<p>
+Ford Motor Company runs an assembly plant in Dearborn, Michigan. The plant operates three shifts per day, 5 days a week. The quality control manager wishes to compare the quality level on the three shifts. Vehicles are classified by quality level (acceptable, unacceptable) and shift (day, afternoon, night). Is there a difference in the quality level on the three shifts? That is, is the quality of the product related to the shift when it was manufactured? Or is the quality of the product independent of the shift on which it was manufactured?
+</p>
+</font><p><font face="Bedrock" size="5"></font></p>
+</div>
+<div id="tabset-1-2">
+<font face="Bedrock" size="5">
+<p>
+A sample of 100 drivers, who were stopped for speeding violations, was classified by gender and whether or not the drivers were wearing a seat-belt when stopped. For this sample, is wearing a seat-belt related to gender?
+</p>
+</font><p><font face="Bedrock" size="5"></font></p>
+</div>
+<div id="tabset-1-3">
+<font face="Bedrock" size="5">
+<p>
+Does a male released from federal prison make a different adjustment to civilian life if he returns to his hometown or if he goes elsewhere to live? The two variables are adjustment to civilian life and place of residence. Note that both variables are measured on the nominal scale.
+</p>
+</font><p><font face="Bedrock" size="5"></font></p>
+</div>
+</div>
 </div>
 </section>
 <section id="bivariate-tables" class="slide level2" data-background-image="images/bg-blank-uitm.png" data-background-position="center" data-background-size="90%" data-background-repeat="no-repeat">
 <h2><strong>Bivariate Tables</strong></h2>
-<p><strong>The idea of independence can be seen in bivariate tables</strong></p>
+<p><strong>The idea of independence can be seen in bivariate or a.k.a. contingency tables</strong></p>
 <div>
 <ul>
 <li class="fragment">Bivariate tables display joint classification of the cases on two variables<br>
@@ -362,7 +396,7 @@
 </li>
 <li class="fragment">The categories of the dependent variable are used as row headings<br>
 </li>
-<li class="fragment">The marginals are the univariate frequency distributions for each variable<br>
+<li class="fragment">The marginals are the univariate frequency distributions for each variable (i.e., the row total and the column total)<br>
 </li>
 </ul>
 </div>
@@ -411,13 +445,13 @@
 <p>You need to compute a test statistic:</p>
 <div>
 <ol type="1">
-<li class="fragment">Chi Square (obtained)<br>
+<li class="fragment">Chi Square (obtained - test statistic, calculated using <em>Formula 1</em>)<br>
 </li>
-<li class="fragment">Then you need to find Chi Square (critical) to compare with your test statistic<br>
+<li class="fragment">Then you need to find Chi Square (critical value) to compare with your test statistic<br>
 </li>
-<li class="fragment">Chi Square (critical) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom<br>
+<li class="fragment">Chi Square (critical value) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom<br>
 </li>
-<li class="fragment">degrees of freedom, <span class="math inline">\(df\)</span> = (row - 1)(col - 1)<br>
+<li class="fragment"><em>degrees of freedom</em>, <span class="math inline">\(df\)</span> = (number of rows - 1)(number of columns - 1)<br>
 </li>
 </ol>
 </div>
@@ -433,7 +467,7 @@
 </p></li>
 </ol>
 </div>
-<p>Formula 1 for Chi Square (obtained):</p>
+<p>Formula 1 for Chi Square (obtained - test statistic):</p>
 
 <p><span class="math display">\[
 \chi^{2} = \sum \frac{(O - E)^{2}}{E}
@@ -484,9 +518,9 @@ E_{i,j} = \frac{(Row_{i}\ Total) * (Column_{j}\ Total)}{Grand\ Total}
 <section id="working-example" class="slide level2" data-background-image="images/bg-blank-uitm.png" data-background-position="center" data-background-size="90%" data-background-repeat="no-repeat">
 <h2>Working Example</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question</a></li><li><a href="#tabset-1-2">Solution</a></li><li><a href="#tabset-1-3">Interpretation</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question</a></li><li><a href="#tabset-2-2">Solution</a></li><li><a href="#tabset-2-3">Interpretation</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
+<div id="tabset-2-1">
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><font face="Bedrock" size="5"> Suppose that the state legislature is considering a bill to lower the legal drinking age to 18. A political scientist is interested in whether there is a relationship between party affiliation and attitude toward the bill. A random sample of 150 registered republicans and 200 registered democrats are asked their opinion about the proposed bill. </font></p>
@@ -497,7 +531,7 @@ E_{i,j} = \frac{(Row_{i}\ Total) * (Column_{j}\ Total)}{Grand\ Total}
 </div>
 </div>
 </div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <div class="columns">
 <div class="column" style="width:50%;">
 <font face="Bedrock" size="4">
@@ -524,7 +558,7 @@ Numbers in Black are obtained (<span class="math inline">\(f_{o}\)</span>) <br> 
 </div>
 </div>
 </div>
-<div id="tabset-1-3">
+<div id="tabset-2-3">
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><img data-src="images/chi-sq-ex-4.png"></p>
@@ -543,6 +577,15 @@ In our study, we had two rows (Republicans and Democrats) and three columns (For
 </font><p><font face="Bedrock" size="4"></font></p>
 </div>
 </div>
+</div>
+</section>
+<section id="past-exam-paper-questions" class="slide level2">
+<h2>Past Exam Paper Questions</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/feb_2022_q7.png"></p>
+<p></p><figcaption aria-hidden="true">Feb 2022 Q7 - Chi Square Test</figcaption><p></p>
+</figure>
 </div>
 <!-- ## Hello, There -->
 <!-- This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including: -->
@@ -943,7 +986,7 @@ In our study, we had two rows (Republicans and Democrats) and three columns (For
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":false},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner

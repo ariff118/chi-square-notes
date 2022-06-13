@@ -6,7 +6,7 @@ format:
     theme: simple
     slide-number: true
     chalkboard: 
-      buttons: false
+      buttons: true
     preview-links: auto
     logo: images/profile1.jpeg
     css: styles.css
@@ -30,17 +30,36 @@ resources:
 ::: incremental
 1. Two variables are independent if, for all cases in the sample, the classification of a case into a particular category of one variable has no effect on the probability that the case will fall into any particular category of the second variable.  
 
-2. To conduct a chi square test, the variables must first be organized into a bivariate table  
+2. To conduct a chi square test, the variables must first be organized into a bivariate table, a.k.a. *contingency tables*.  
+
+3. A contingency table is used to investigate whether two traits or characteristics are related. Each observation is classified according to two criteria. We use the
+usual hypothesis testing procedure.
+:::
+
+## Application of Chi-Square Test of Independence {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
+
+<font face = "Bedrock" size = "5"><p>We can use the chi-square statistic to formally test for a relationship between two nominal-scaled variables. To put it another way, Is one variable *independent* of the other?</p></font>  
+
+::: {.panel-tabset}  
+
+### Situation 1  
+<font face = "Bedrock" size = "5"><p>Ford Motor Company runs an assembly plant in Dearborn, Michigan. The plant operates three shifts per day, 5 days a week. The quality control manager wishes to compare the quality level on the three shifts. Vehicles are classified by quality level (acceptable, unacceptable) and shift (day, afternoon, night). Is there a difference in the quality level on the three shifts? That is, is the quality of the product related to the shift when it was manufactured? Or is the quality of the product independent of the shift on which it was manufactured?</p></font>  
+
+### Situation 2  
+<font face = "Bedrock" size = "5"><p>A sample of 100 drivers, who were stopped for speeding violations, was classified by gender and whether or not the drivers were wearing a seat-belt when stopped. For this sample, is wearing a seat-belt related to gender?</p></font>  
+
+### Situation 3  
+<font face = "Bedrock" size = "5"><p>Does a male released from federal prison make a different adjustment to civilian life if he returns to his hometown or if he goes elsewhere to live? The two variables are adjustment to civilian life and place of residence. Note that both variables are measured on the nominal scale.</p></font>
 :::
 
 ## **Bivariate Tables** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-**The idea of independence can be seen in bivariate tables**  
+**The idea of independence can be seen in bivariate or a.k.a. contingency tables**  
 
 ::: incremental  
 - Bivariate tables display joint classification of the cases on two variables  
 - The categories of the independent variable are used as column headings  
 - The categories of the dependent variable are used as row headings  
-- The marginals are the univariate frequency distributions for each variable  
+- The marginals are the univariate frequency distributions for each variable (i.e., the row total and the column total)  
 :::
 
 ## **Bivariate Tables, cont.** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
@@ -73,10 +92,10 @@ resources:
 You need to compute a test statistic:  
 
 ::: incremental  
-1. Chi Square (obtained)  
-2. Then you need to find Chi Square (critical) to compare with your test statistic  
-3. Chi Square (critical) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom  
-4. degrees of freedom, $df$ = (row - 1)(col - 1)  
+1. Chi Square (obtained - test statistic, calculated using *Formula 1*)  
+2. Then you need to find Chi Square (critical value) to compare with your test statistic  
+3. Chi Square (critical value) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom  
+4. *degrees of freedom*, $df$ = (number of rows - 1)(number of columns - 1)  
 :::
 
 ## **Computation, cont.** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
@@ -91,7 +110,7 @@ The Chi Square statistic is
 3. divided by the expected frequency.  
 :::
 
-Formula 1 for Chi Square (obtained):  
+Formula 1 for Chi Square (obtained - test statistic):  
 
 ::: aside
 Formula 1
@@ -210,6 +229,10 @@ $\chi^{2}=5.62+0.27+3.11+4.22+0.20+2.33=15.75$
 <font face = "Bedrock" size = "4"><p>In our study, we had two rows (Republicans and Democrats) and three columns (For, Undecided, Against). Therefore, the degrees of freedom for our study is (2-1)(3-1) = 1(2) = 2. Using an a of .05, the critical value from Table would be 5.991 Since our calculated chi square is 15.75, we conclude that there **IS** a relationship between political party and opinion on lowering the drinking age, thereby rejecting the Null Hypothesis</p></font>
 
 :::  
+
+## Past Exam Paper Questions  
+
+![Feb 2022 Q7 - Chi Square Test](images/feb_2022_q7.png)
 
 <!-- ## Hello, There -->
 
