@@ -9,108 +9,148 @@ format:
       buttons: true
     preview-links: auto
     logo: images/profile1.jpeg
-    css: styles.css
+    #css: styles.css
     footer: <https://scmathuitmkedah.github.io/STA404/>
 resources:
   - chi-sq.pdf
 ---
 
-## **Introduction** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}
-  
-::: incremental
-- Chi square test is the single most frequently used test of hypothesis in the social sciences  
-- It is a nonparametric test, so requires no assumption about the exact shape of the population distribution  
-- It is appropriate for nominally measured variables  
-- Can be used in the two-sample case, but can also be used when there are more than two samples  
-:::
-
-## **The Logic of Chi Square** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-### The chi square test for independence  
+## **Introduction** 
 
 ::: incremental
-1. Two variables are independent if, for all cases in the sample, the classification of a case into a particular category of one variable has no effect on the probability that the case will fall into any particular category of the second variable.  
-
-2. To conduct a chi square test, the variables must first be organized into a bivariate table, a.k.a. *contingency tables*.  
-
-3. A contingency table is used to investigate whether two traits or characteristics are related. Each observation is classified according to two criteria. We use the
-usual hypothesis testing procedure.
+-   Chi square test is the single most frequently used test of hypothesis in the social sciences\
+-   It is a nonparametric test, so requires no assumption about the exact shape of the population distribution\
+-   It is appropriate for nominally measured variables\
+-   Can be used in the two-sample case, but can also be used when there are more than two samples\
 :::
 
-## Application of Chi-Square Test of Independence {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
+## **The Logic of Chi Square** 
 
-<font face = "Bedrock" size = "5"><p>We can use the chi-square statistic to formally test for a relationship between two nominal-scaled variables. To put it another way, Is one variable *independent* of the other?</p></font>  
-
-::: {.panel-tabset}  
-
-### Situation 1  
-<font face = "Bedrock" size = "5"><p>Ford Motor Company runs an assembly plant in Dearborn, Michigan. The plant operates three shifts per day, 5 days a week. The quality control manager wishes to compare the quality level on the three shifts. Vehicles are classified by quality level (acceptable, unacceptable) and shift (day, afternoon, night). Is there a difference in the quality level on the three shifts? That is, is the quality of the product related to the shift when it was manufactured? Or is the quality of the product independent of the shift on which it was manufactured?</p></font>  
-
-### Situation 2  
-<font face = "Bedrock" size = "5"><p>A sample of 100 drivers, who were stopped for speeding violations, was classified by gender and whether or not the drivers were wearing a seat-belt when stopped. For this sample, is wearing a seat-belt related to gender?</p></font>  
-
-### Situation 3  
-<font face = "Bedrock" size = "5"><p>Does a male released from federal prison make a different adjustment to civilian life if he returns to his hometown or if he goes elsewhere to live? The two variables are adjustment to civilian life and place of residence. Note that both variables are measured on the nominal scale.</p></font>
-:::
-
-## **Bivariate Tables** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-**The idea of independence can be seen in bivariate or a.k.a. contingency tables**  
-
-::: incremental  
-- Bivariate tables display joint classification of the cases on two variables  
-- The categories of the independent variable are used as column headings  
-- The categories of the dependent variable are used as row headings  
-- The marginals are the univariate frequency distributions for each variable (i.e., the row total and the column total)  
-:::
-
-## **Bivariate Tables, cont.** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-
-::: incremental  
-- To find the number of cells in a table, multiply the number of categories of the independent variable by the number of categories of the dependent variable  
-- A bivariate table in which both variables have three categories has nine cells  
-- If two variables are independent, the cell frequencies will be determined by random chance  
-:::
-
-## **Bivariate Tables, cont.** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-
-::: incremental  
-- The null hypothesis states that the variables are independent  
-- If the null hypothesis is true, the expected cell frequencies are what we would expect to find if only random chance were operating  
-- The actual frequencies would differ little from the expected frequencies  
-- Therefore, it is still the hypothesis of no difference, but this time the difference measured is between the observed frequencies and the expected frequencies
-:::
-
-## **Independence** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-
-::: incremental  
-- When the variables are independent of each other, there should be little difference between the observed frequencies and the expected frequencies  
-- These slight differences would be due to chance alone  
-- If the null is false (we reject the null), there should be large differences between the two
-:::
-
-## **Computation of Chi Square** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-
-You need to compute a test statistic:  
-
-::: incremental  
-1. Chi Square (obtained - test statistic, calculated using *Formula 1*)  
-2. Then you need to find Chi Square (critical value) to compare with your test statistic  
-3. Chi Square (critical value) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom  
-4. *degrees of freedom*, $df$ = (number of rows - 1)(number of columns - 1)  
-:::
-
-## **Computation, cont.** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
+### The chi square test for independence
 
 ::: incremental
-The Chi Square statistic is  
+1.  Two variables are independent if, for all cases in the sample, the classification of a case into a particular category of one variable has no effect on the probability that the case will fall into any particular category of the second variable.
 
-1. the sum over all cells of  
+2.  To conduct a chi square test, the variables must first be organized into a bivariate table, a.k.a. *contingency tables*.
 
-2. the squared difference between the obtained value and the expected value, which is then  
-
-3. divided by the expected frequency.  
+3.  A contingency table is used to investigate whether two traits or characteristics are related. Each observation is classified according to two criteria. We use the usual hypothesis testing procedure.
 :::
 
-Formula 1 for Chi Square (obtained - test statistic):  
+## Data Requirements
+
+Your data must meet the following requirements:  
+
+:::{.callout-important}  
+::: incremental  
+1. Two categorical variables.  
+2. Two or more categories (groups) for each variable.  
+3. Independence of observations.  
+    - There is no relationship between the subjects in each group.  
+    - The categorical variables are not "paired" in any way (e.g. pre-test/post-test observations).  
+4. Relatively large sample size.  
+    - Expected frequencies for each cell are at least 1.  
+    - Expected frequencies should be at least 5 for the majority (80%) of the cells. 
+:::  
+:::
+
+## Application of Chi-Square Test of Independence   
+
+<font face = "Bedrock" size = "5">
+<p>
+
+We can use the chi-square statistic to formally test for a relationship between two nominal-scaled variables. To put it another way, Is one variable *independent* of the other?
+
+</p>
+</font>
+
+::: panel-tabset
+### Situation 1
+
+<font face = "Bedrock" size = "6">
+
+<p>
+
+Ford Motor Company runs an assembly plant in Dearborn, Michigan. The plant operates three shifts per day, 5 days a week. The quality control manager wishes to compare the quality level on the three shifts. Vehicles are classified by quality level (acceptable, unacceptable) and shift (day, afternoon, night). Is there a difference in the quality level on the three shifts? That is, is the quality of the product related to the shift when it was manufactured? Or is the quality of the product independent of the shift on which it was manufactured?
+
+</p>
+
+</font>
+
+### Situation 2
+
+<font face = "Bedrock" size = "6">
+
+<p>
+
+A sample of 100 drivers, who were stopped for speeding violations, was classified by gender and whether or not the drivers were wearing a seat-belt when stopped. For this sample, is wearing a seat-belt related to gender?
+
+</p>
+
+</font>
+
+### Situation 3
+
+<font face = "Bedrock" size = "6">
+
+<p>
+
+Does a male released from federal prison make a different adjustment to civilian life if he returns to his hometown or if he goes elsewhere to live? The two variables are adjustment to civilian life and place of residence. Note that both variables are measured on the nominal scale.
+
+</p>
+
+</font>
+:::
+
+## **Bivariate Tables** 
+
+**The idea of independence can be seen in bivariate or a.k.a. contingency tables**
+
+::: incremental
+-   Bivariate tables display joint classification of the cases on two variables\
+-   The categories of the independent variable are used as column headings\
+-   The categories of the dependent variable are used as row headings\
+-   The marginals are the univariate frequency distributions for each variable (i.e., the row total and the column total)\
+:::
+
+## **Bivariate Tables, cont.** 
+
+::: incremental
+-   To find the number of cells in a table, multiply the number of categories of the independent variable by the number of categories of the dependent variable\
+-   A bivariate table in which both variables have three categories has nine cells\
+-   If two variables are independent, the cell frequencies will be determined by random chance\
+:::
+
+## **Bivariate Tables, cont.** 
+
+::: incremental
+-   The null hypothesis states that the variables are independent\
+-   If the null hypothesis is true, the expected cell frequencies are what we would expect to find if only random chance were operating\
+-   The actual frequencies would differ little from the expected frequencies\
+-   Therefore, it is still the hypothesis of no difference, but this time the difference measured is between the observed frequencies and the expected frequencies
+:::
+
+## **Independence** 
+
+::: incremental
+-   When the variables are independent of each other, there should be little difference between the observed frequencies and the expected frequencies\
+-   These slight differences would be due to chance alone\
+-   If the null is false (we reject the null), there should be large differences between the two
+:::
+
+## **Computation of Chi Square** 
+
+You need to compute a test statistic:
+
+::: incremental
+1.  Chi Square (obtained - test statistic, calculated using *Formula 1*)\
+2.  Then you need to find Chi Square (critical value) to compare with your test statistic\
+3.  Chi Square (critical value) is found by looking in a chi square table (refer to your statistical table) for a particular alpha level and degrees of freedom\
+4.  *degrees of freedom*, $df$ = (number of rows - 1)(number of columns - 1)\
+:::
+
+## **Computation, cont.** 
+
+Formula 1 for Chi Square (obtained - test statistic):
 
 ::: aside
 Formula 1
@@ -118,625 +158,278 @@ Formula 1
 
 $$
 \chi^{2} = \sum \frac{(O - E)^{2}}{E}
-$$
+$$  
+::: incremental 
+The Chi Square statistic is  
 
-## **Computation, cont.** {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
+1.  the sum over all cells of  
 
-::: incremental
-- You have to calculate an expected frequency for each cell in the table  
-- Since marginals will be unequal in most cases, you need Formula 2 to compute the expected frequencies:  
+2.  the squared difference between the obtained value and the expected value, which is then  
+
+3.  divided by the expected frequency.  
 :::
+
+## **Computation, cont.** 
 
 ::: aside
 Formula 2
 :::
+
 $$
 E_{i,j} = \frac{(Row_{i}\ Total) * (Column_{j}\ Total)}{Grand\ Total}
-$$
-## Examples: {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
-### Where Chi-Square Test can be applied?  
-
-The following are situations where we can use the Chi-Square test:  
-
+$$  
 ::: incremental  
-- Testing if there is an association between gender and preferred learning method (online/books).  
-- Testing if there is an association between political ideology and opinion on tax reform.  
-- Testing if there is an association between marital status and level of education.  
+- You have to calculate an expected frequency for each cell in the table\
+- Since marginals will be unequal in most cases, you need Formula 2 to compute the expected frequencies:\
 :::
 
-## How to write the hypothesis? {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
+## Examples: 
 
-The Chi-Square tests the null hypothesis:  
+### Where Chi-Square Test can be applied?
 
-$H_{0}$ : The two variables are independent (i.e. there is no association)  
+The following are situations where we can use the Chi-Square test:
 
-versus the alternative hypothesis:  
-	
-$H_{1}$ : The two variables are not independent (i.e. there is an association)  
+::: incremental
+-   Testing if there is an association between gender and preferred learning method (online/books).\
+-   Testing if there is an association between political ideology and opinion on tax reform.\
+-   Testing if there is an association between marital status and level of education.\
+:::
 
-Therefore, when we reject the null hypothesis, we believe that the two variables affect each other, even though the test does not tell us how this association occurs between categories.  
+## How to write the hypothesis? 
 
-## Working Example {background-image="images/bg-blank-uitm.png" background-position="center" background-size="90%" background-repeat="no-repeat"}  
+The null hypothesis ($H_{0}$) and alternative hypothesis ($H_{1}$) of the Chi-Square Test of Independence can be expressed in two different but equivalent ways:
 
-::: {.panel-tabset}  
+::: columns
+::: {.column width="50%"}
+$H_{0}$: "\[Variable 1\] is independent of \[Variable 2\]"\
+$H_{1}$: "\[Variable 1\] is not independent of \[Variable 2\]"
+:::
 
-### Question  
+::: {.column width="50%"}
+$H_{0}$: "\[Variable 1\] is not associated with \[Variable 2\]"\
+$H_{1}$: "\[Variable 1\] is associated with \[Variable 2\]"
+:::
+:::
 
-:::: {.columns}
+Therefore, when we reject the null hypothesis, we believe that the two variables affect each other, even though the test does not tell us how this association occurs between categories.
 
+## Working Example 1 
+
+::: panel-tabset
+### Question
+
+::: columns
 ::: {.column width="60%"}
-<font face = "Bedrock" size = "5">
-Suppose that the state legislature is considering a bill to lower the legal drinking age to 18. A political scientist is interested in whether there is a relationship between party affiliation and attitude toward the bill. A random sample of 150 registered republicans and 200 registered democrats are asked their opinion about the proposed bill.
-</font>  
+<font face = "Bedrock" size = "5"> Suppose that the state legislature is considering a bill to lower the legal drinking age to 18. A political scientist is interested in whether there is a relationship between party affiliation and attitude toward the bill. A random sample of 150 registered republicans and 200 registered democrats are asked their opinion about the proposed bill. </font>
 :::
 
 ::: {.column width="40%"}
 <center>
-![](images/chi-sq-ex-1.png){width="35%}
+
+![](images/chi-sq-ex-1.png){width="\"35%"}
+
 </center>
 :::
+:::
 
-::::
+### Solution
 
-### Solution  
+::: columns
+::: {.column width="50%"}
+<font face = "Bedrock" size = "4">
 
-:::: {.columns}
+<center>
+
+<p>
+
+Calculating the Expected Value for a Particular Cell <br> Ex: $Cell_{11}\ =\ \frac{150 * 130}{350}\ =\ 55.7$
+
+</p>
+
+</center>
+
+</font>
+
+<center>
+
+![](images/chi-sq-ex-2.png){width="\"45%"}
+
+</center>
+:::
 
 ::: {.column width="50%"}
 <font face = "Bedrock" size = "4">
-<center><p>
-Calculating the Expected Value for a Particular Cell <br>
-Ex: $Cell_{11}\ =\ \frac{150 * 130}{350}\ =\ 55.7$  
-</p></center></font>
-<center>
-![](images/chi-sq-ex-2.png){width="45%}
-</center>
-:::
-
-::: {.column width="50%"}
-<font face = "Bedrock" size = "4">
-<center><p>
-Numbers in Black are obtained ($f_{o}$) <br>
-Numbers in Purple are expected ($f_{e}$)  
-</p></center></font>
 
 <center>
-![](images/chi-sq-ex-3.png){width="45%}
+
+<p>
+
+Numbers in Black are obtained ($f_{o}$) <br> Numbers in Purple are expected ($f_{e}$)
+
+</p>
+
+</center>
+
+</font>
+
+<center>
+
+![](images/chi-sq-ex-3.png){width="\"45%"}
+
 </center>
 :::
+:::
 
-::::
+### Interpretation
 
-### Interpretation  
-
-:::: {.columns}
-
+::: columns
 ::: {.column width="40%"}
-![](images/chi-sq-ex-4.png){width="35%}
+![](images/chi-sq-ex-4.png){width="\"35%"}
 :::
 
 ::: {.column width="60%"}
 <font face = "Bedrock" size = "4">
-<p>The calculated value for the chi square statistic is compared to the critical value found in Table. <br>
-**Note:** *The distribution of the Chi Square Statistic is not normal and the critical values are only on one side.  If the obtained values are close to the expected value, then the chi square statistic will approach 0.  As the obtained value is different from the expected, the value of chi square will increase.  This is reflected in the values found in Table.* <br>
-The Degrees of Freedom for the Chi Square Test of Independence is the product of the number of rows minus 1 times the number of columns minus 1. <br>
-$\chi^{2}=5.62+0.27+3.11+4.22+0.20+2.33=15.75$
-</p></font>  
+
+<p>
+
+The calculated value for the chi square statistic is compared to the critical value found in Table. <br> **Note:** *The distribution of the Chi Square Statistic is not normal and the critical values are only on one side. If the obtained values are close to the expected value, then the chi square statistic will approach 0. As the obtained value is different from the expected, the value of chi square will increase. This is reflected in the values found in Table.* <br> The Degrees of Freedom for the Chi Square Test of Independence is the product of the (number of rows minus 1) times the (number of columns minus 1). <br> $\chi^{2}=5.62+0.27+3.11+4.22+0.20+2.33=15.75$
+
+</p>
+
+</font>
+:::
 :::
 
-::::
+<font face = "Bedrock" size = "4">
 
-<font face = "Bedrock" size = "4"><p>In our study, we had two rows (Republicans and Democrats) and three columns (For, Undecided, Against). Therefore, the degrees of freedom for our study is (2-1)(3-1) = 1(2) = 2. Using an a of .05, the critical value from Table would be 5.991 Since our calculated chi square is 15.75, we conclude that there **IS** a relationship between political party and opinion on lowering the drinking age, thereby rejecting the Null Hypothesis</p></font>
+<p>
 
-:::  
+In our study, we had two rows (Republicans and Democrats) and three columns (For, Undecided, Against). Therefore, the degrees of freedom for our study is (2-1)(3-1) = 1(2) = 2. Using an a of .05, the critical value from Table would be 5.991 Since our calculated chi square is 15.75, we conclude that there **IS** a relationship between political party and opinion on lowering the drinking age, thereby rejecting the Null Hypothesis
 
-## Past Exam Paper Questions  
+</p>
 
-![Feb 2022 Q7 - Chi Square Test](images/feb_2022_q7.png)
+</font>
+:::
 
-<!-- ## Hello, There -->
+## Working Example 2 
 
-<!-- This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including: -->
+::: panel-tabset
+### 1
 
-<!-- -   Presenting code and LaTeX equations -->
-<!-- -   Including computations in slide output -->
-<!-- -   Image, video, and iframe backgrounds -->
-<!-- -   Fancy transitions and animations -->
-<!-- -   Printing to PDF -->
+**PROBLEM STATEMENT**\
+<font face = "Bedrock" size = "6">
+<p>
+In the sample dataset, respondents were asked their gender and whether or not they were a cigarette smoker. There were three answer choices: Nonsmoker, Past smoker, and Current smoker. Suppose we want to test for an association between smoking behavior (nonsmoker, current smoker, or past smoker) and gender (male or female) using a Chi-Square Test of Independence (we'll use α = 0.05).  
+Hypothesis:  
+$H_{0}$: Gender is not associated with Smoking\
+$H_{1}$: Gender is associated with Smoking\
+</p>
+</font>
 
-<!-- ...and much more -->
-
-<!-- ## Pretty Code {auto-animate="true"} -->
-
-<!-- -   Over 20 syntax highlighting themes available -->
-<!-- -   Default theme optimized for accessibility -->
-
-<!-- ``` r -->
-<!-- # Define a server for the Shiny app -->
-<!-- function(input, output) { -->
-
-<!--   # Fill in the spot we created for a plot -->
-<!--   output$phonePlot <- renderPlot({ -->
-<!--     # Render a barplot -->
-<!--   }) -->
-<!-- } -->
-<!-- ``` -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Syntax Highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting) -->
-<!-- ::: -->
-
-<!-- ## Code Animations {auto-animate="true"} -->
-
-<!-- -   Over 20 syntax highlighting themes available -->
-<!-- -   Default theme optimized for accessibility -->
-
-<!-- ``` r -->
-<!-- # Define a server for the Shiny app -->
-<!-- function(input, output) { -->
-
-<!--   # Fill in the spot we created for a plot -->
-<!--   output$phonePlot <- renderPlot({ -->
-<!--     # Render a barplot -->
-<!--     barplot(WorldPhones[,input$region]*1000,  -->
-<!--             main=input$region, -->
-<!--             ylab="Number of Telephones", -->
-<!--             xlab="Year") -->
-<!--   }) -->
-<!-- } -->
-<!-- ``` -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Code Animations](https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations) -->
-<!-- ::: -->
-
-<!-- ## Line Highlighting -->
-
-<!-- -   Highlight specific lines for emphasis -->
-<!-- -   Incrementally highlight additional lines -->
-
-<!-- ``` {.python code-line-numbers="4-5|7|10"} -->
-<!-- import numpy as np -->
-<!-- import matplotlib.pyplot as plt -->
-
-<!-- r = np.arange(0, 2, 0.01) -->
-<!-- theta = 2 * np.pi * r -->
-<!-- fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}) -->
-<!-- ax.plot(theta, r) -->
-<!-- ax.set_rticks([0.5, 1, 1.5, 2]) -->
-<!-- ax.grid(True) -->
-<!-- plt.show() -->
-<!-- ``` -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Line Highlighting](https://quarto.org/docs/presentations/revealjs/#line-highlighting) -->
-<!-- ::: -->
-
-<!-- ## Executable Code -->
-
-<!-- ```{r} -->
-<!-- #| echo: true -->
-<!-- #| fig-width: 10 -->
-<!-- #| fig-height: 4.5 -->
-<!-- library(ggplot2) -->
-<!-- ggplot(mtcars, aes(hp, mpg, color = am)) + -->
-<!--   geom_point() +  geom_smooth(formula = y ~ x, method = "loess") -->
-<!-- ``` -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code) -->
-<!-- ::: -->
-
-<!-- ## LaTeX Equations -->
-
-<!-- [MathJax](https://www.mathjax.org/) rendering of equations to HTML -->
-
-<!-- ::: columns -->
-<!-- ::: {.column width="40%"} -->
-<!-- ``` tex -->
-<!-- \begin{gather*} -->
-<!-- a_1=b_1+c_1\\ -->
-<!-- a_2=b_2+c_2-d_2+e_2 -->
-<!-- \end{gather*} -->
-
-<!-- \begin{align} -->
-<!-- a_{11}& =b_{11}& -->
-<!--   a_{12}& =b_{12}\\ -->
-<!-- a_{21}& =b_{21}& -->
-<!--   a_{22}& =b_{22}+c_{22} -->
-<!-- \end{align} -->
-<!-- ``` -->
-<!-- ::: -->
-
-<!-- ::: {.column width="60%"} -->
-<!-- ```{=tex} -->
-<!-- \begin{gather*} -->
-<!-- a_1=b_1+c_1\\ -->
-<!-- a_2=b_2+c_2-d_2+e_2 -->
-<!-- \end{gather*} -->
-<!-- ``` -->
-<!-- ```{=tex} -->
-<!-- \begin{align} -->
-<!-- a_{11}& =b_{11}& -->
-<!--   a_{12}& =b_{12}\\ -->
-<!-- a_{21}& =b_{21}& -->
-<!--   a_{22}& =b_{22}+c_{22} -->
-<!-- \end{align} -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ::: -->
+### 2
 
-<!-- ::: footer -->
-<!-- Learn more: [LaTeX Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations) -->
-<!-- ::: -->
+::: columns
+::: {.column width="35%"}
+**BEFORE THE TEST**\
+![](images/work-ex-2-1.png)
+:::
 
-<!-- ## Column Layout {.smaller} -->
+::: {.column width="65%"}
+::: callout-note
+<font face = "Bedrock" size = "4">
 
-<!-- Arrange content into columns of varying widths: -->
+<p>
 
-<!-- ::: columns -->
-<!-- ::: {.column width="35%"} -->
-<!-- #### Motor Trend Car Road Tests -->
+Before we test for "association", it is helpful to understand what an "association" and a "lack of association" between two categorical variables looks like. One way to visualize this is using clustered bar charts. Let's look at the clustered bar chart produced by the Crosstabs procedure. This is the chart that is produced if you use Smoking as the row variable and Gender as the column variable (running the syntax later in this example):\
+The "clusters" in a clustered bar chart are determined by the row variable (in this case, the smoking categories). The color of the bars is determined by the column variable (in this case, gender). The height of each bar represents the total number of observations in that particular combination of categories.\
+This type of chart emphasizes the differences within the categories of the row variable. Notice how within each smoking category, the heights of the bars (i.e., the number of males and females) are very similar. That is, there are an approximately equal number of male and female nonsmokers; approximately equal number of male and female past smokers; approximately equal number of male and female current smokers. If there were an association between gender and smoking, we would expect these counts to differ between groups in some way.
 
-<!-- The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles. -->
-<!-- ::: -->
+</p>
 
-<!-- ::: {.column width="3%"} -->
-<!-- ::: -->
+</font>
+:::
+:::
+:::
 
-<!-- ::: {.column width="62%"} -->
-<!-- ```{r} -->
-<!-- knitr::kable(head(mtcars)[,c("mpg",	"cyl", "disp", "hp", "wt")]) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ::: -->
+### 3
 
-<!-- ::: footer -->
-<!-- Learn more: [Multiple Columns](https://quarto.org/docs/presentations/revealjs/#multiple-columns) -->
-<!-- ::: -->
+**RUNNING THE TEST**
 
-<!-- ## Incremental Lists -->
+::: incremental
+1.  Open the Crosstabs dialog (Analyze \> Descriptive Statistics \> Crosstabs).\
+2.  Select Smoking as the row variable, and Gender as the column variable.\
+3.  Click Statistics. Check Chi-square, then click Continue.\
+4.  (Optional) Check the box for Display clustered bar charts.\
+5.  Click OK.\
+:::
 
-<!-- Lists can optionally be displayed incrementally: -->
+### 4
 
-<!-- ::: incremental -->
-<!-- -   First item -->
-<!-- -   Second item -->
-<!-- -   Third item -->
-<!-- ::: -->
+**Syntax**
 
-<!-- . . . -->
+``` spss
+CROSSTABS
+  /TABLES=Smoking BY Gender
+  /FORMAT=AVALUE TABLES
+  /STATISTICS=CHISQ
+  /CELLS=COUNT
+  /COUNT ROUND CELL
+  /BARCHART.
+```
 
-<!-- <br/> Insert pauses to make other types of content display incrementally. -->
+### 5
 
-<!-- ::: footer -->
-<!-- Learn more: [Incremental Lists](https://quarto.org/docs/presentations/revealjs/#incremental-lists) -->
-<!-- ::: -->
+***NOTE:*** Refer to Tab 6 for output tables
 
-<!-- ## Fragments -->
+::: {.callout-note collapse="true"}
+1.  The first table is the Case Processing summary (Table 1), which tells us the number of valid cases used for analysis. Only cases with nonmissing values for both smoking behavior and gender can be used in the test.\
+:::
 
-<!-- Incremental text display and animation with fragments: -->
+::: {.callout-note collapse="true"}
+2.  The next tables are the crosstabulation (Table 2a) and chi-square test results (Table 2b).\
+:::
 
-<!-- <br/> -->
+### 6  
 
-<!-- ::: {.fragment .fade-in} -->
-<!-- Fade in -->
-<!-- ::: -->
+:::{.columns}
+:::{.column width="50%"}
+![](images/work-ex-2-2.png){width="500" height="187"}
+:::
 
-<!-- ::: {.fragment .fade-up} -->
-<!-- Slide up while fading in -->
-<!-- ::: -->
+:::{.column width="50%"}
+![](images/work-ex-2-3.png){width="400"}\
+![](images/work-ex-2-4.png){width="500"}
+:::
+:::
 
-<!-- ::: {.fragment .fade-left} -->
-<!-- Slide left while fading in -->
-<!-- ::: -->
+### 7
 
-<!-- ::: {.fragment .fade-in-then-semi-out} -->
-<!-- Fade in then semi out -->
-<!-- ::: -->
+::: callout-important
+The key result in the Chi-Square Tests table is the Pearson Chi-Square.
 
-<!-- . . . -->
+-   The value of the test statistic is 3.171.\
+-   The footnote for this statistic pertains to the expected cell count assumption (i.e., expected cell counts are all greater than 5): no cells had an expected count less than 5, so this assumption was met.\
+-   Because the test statistic is based on a 3x2 crosstabulation table, the degrees of freedom (df) for the test statistic is df=(R−1)∗(C−1)=(3−1)∗(2−1)=2∗1=2df=(R−1)∗(C−1)=(3−1)∗(2−1)=2∗1=2\
+-   The corresponding p-value of the test statistic is p = 0.205.
+:::
 
-<!-- ::: {.fragment .strike} -->
-<!-- Strike -->
-<!-- ::: -->
+### 8  
+**Decision**  
+Since the p-value is greater than our chosen significance level ($\alpha$ = 0.05), we do not reject the null hypothesis. Rather, we conclude that there is not enough evidence to suggest an association between gender and smoking.  
 
-<!-- ::: {.fragment .highlight-red} -->
-<!-- Highlight red -->
-<!-- ::: -->
+Based on the results, we can state the following:  
+- No association was found between gender and smoking behavior ($\chi^{2}_{2}$> = 3.171, $p$ = 0.205).
 
-<!-- ::: footer -->
-<!-- Learn more: [Fragments](https://quarto.org/docs/presentations/revealjs/advanced.html#fragments) -->
-<!-- ::: -->
+:::
 
-<!-- ## Slide Backgrounds {background="#43464B"} -->
+## Past Exam Paper Questions
 
-<!-- Set the `background` attribute on a slide to change the background color (all CSS color formats are supported). -->
+::: columns
+::: {.column width="50%"}
+![Feb 2022 Q7 - Chi Square Test](images/feb_2022_q7.png){fig-align="left" width="700" height="600"}
+:::
 
-<!-- Different background transitions are available via the `background-transition` option. -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Slide Backgrounds](https://quarto.org/docs/presentations/revealjs/#color-backgrounds) -->
-<!-- ::: -->
-
-<!-- ## Media Backgrounds {background="#43464B" background-image="images/milky-way.jpeg"} -->
-
-<!-- You can also use the following as a slide background: -->
-
-<!-- -   An image: `background-image` -->
-
-<!-- -   A video: `background-video` -->
-
-<!-- -   An iframe: `background-iframe` -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Media Backgrounds](https://quarto.org/docs/presentations/revealjs/#image-backgrounds) -->
-<!-- ::: -->
-
-<!-- ## Absolute Position -->
-
-<!-- Position images or other elements at precise locations -->
-
-<!-- ![](mini/images/kitten-400-350.jpeg){.absolute top="170" left="30" width="400" height="400"} -->
-
-<!-- ![](mini/images/kitten-450-250.jpeg){.absolute .fragment top="150" right="80" width="450"} -->
-
-<!-- ![](mini/images/kitten-300-200.jpeg){.absolute .fragment bottom="110" right="130" width="300"} -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Absolute Position](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position) -->
-<!-- ::: -->
-
-<!-- ## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"} -->
-
-<!-- Automatically animate matching elements across slides with Auto-Animate. -->
-
-<!-- ::: r-hstack -->
-<!-- ::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"} -->
-<!-- ::: -->
-
-<!-- ::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"} -->
-<!-- ::: -->
-
-<!-- ::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"} -->
-<!-- ::: -->
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate) -->
-<!-- ::: -->
-
-<!-- ## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"} -->
-
-<!-- Automatically animate matching elements across slides with Auto-Animate. -->
-
-<!-- ::: r-stack -->
-<!-- ::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"} -->
-<!-- ::: -->
-
-<!-- ::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"} -->
-<!-- ::: -->
-
-<!-- ::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"} -->
-<!-- ::: -->
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate) -->
-<!-- ::: -->
-
-<!-- ## Slide Transitions {.smaller} -->
-
-<!-- The next few slides will transition using the `slide` transition -->
-
-<!-- | Transition | Description                                                            | -->
-<!-- |------------|------------------------------------------------------------------------| -->
-<!-- | `none`     | No transition (default, switch instantly)                              | -->
-<!-- | `fade`     | Cross fade                                                             | -->
-<!-- | `slide`    | Slide horizontally                                                     | -->
-<!-- | `convex`   | Slide at a convex angle                                                | -->
-<!-- | `concave`  | Slide at a concave angle                                               | -->
-<!-- | `zoom`     | Scale the incoming slide so it grows in from the center of the screen. | -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Slide Transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions) -->
-<!-- ::: -->
-
-<!-- ## Tabsets {.smaller .scrollable transition="slide"} -->
-
-<!-- ::: panel-tabset -->
-<!-- ### Plot -->
-
-<!-- ```{r} -->
-<!-- library(ggplot2) -->
-<!-- ggplot(mtcars, aes(hp, mpg, color = am)) + -->
-<!--   geom_point() +  geom_smooth(formula = y ~ x, method = "loess") -->
-<!-- ``` -->
-
-<!-- ### Data -->
-
-<!-- ```{r} -->
-<!-- knitr::kable(mtcars) -->
-<!-- ``` -->
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Tabsets](https://quarto.org/docs/presentations/revealjs/#tabsets) -->
-<!-- ::: -->
-
-<!-- ## Interactive Slides {.smaller transition="slide"} -->
-
-<!-- Include Jupyter widgets and htmlwidgets in your presentations -->
-
-<!-- ```{r} -->
-<!-- #| echo: false -->
-<!-- #| fig-height: 5 -->
-<!-- library(leaflet) -->
-<!-- leaflet() %>% -->
-<!--   addTiles() %>%  # Add default OpenStreetMap map tiles -->
-<!--   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R") -->
-<!-- ``` -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Jupyter widgets](https://quarto.org/docs/interactive/widgets/jupyter.html), [htmlwidgets](https://quarto.org/docs/interactive/widgets/htmlwidgets.html) -->
-<!-- ::: -->
-
-<!-- ## Interactive Slides {.smaller transition="slide"} -->
-
-<!-- Turn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs. -->
-
-<!-- ```{r} -->
-<!-- ojs_define(actors = data.frame( -->
-<!--   x = rnorm(100), -->
-<!--   y = rnorm(100) -->
-<!-- )) -->
-<!-- ``` -->
-
-<!-- ```{ojs} -->
-<!-- //| panel: sidebar -->
-<!-- viewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: "talent weight" }) -->
-<!-- viewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: "looks weight" }) -->
-<!-- viewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: "min fame" }) -->
-<!-- ``` -->
-
-<!-- <!-- ```{ojs} --> -->
-<!-- <!-- //| panel: fill --> -->
-<!-- <!-- import { plotActors } from './actors.js'; --> -->
-<!-- <!-- plotActors(actors, talentWeight, looksWeight, minimum) --> -->
-<!-- <!-- ``` --> -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Observable](https://quarto.org/docs/interactive/ojs/), [Shiny](https://quarto.org/docs/interactive/shiny/), [Component Layout](https://quarto.org/docs/interactive/layout.html) -->
-<!-- ::: -->
-
-<!-- ## Preview Links -->
-
-<!-- Navigate to hyperlinks without disrupting the flow of your presentation. -->
-
-<!-- Use the `preview-links` option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration: -->
-
-<!-- ::: {style="text-align: center; margin-top: 1em"} -->
-<!-- [Matplotlib: Visualization with Python](https://matplotlib.org/){preview-link="true" style="text-align: center"} -->
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Preview Links](https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links) -->
-<!-- ::: -->
-
-<!-- ## Themes -->
-
-<!-- 10 Built-in Themes (or [create your own](https://quarto.org/docs/presentations/revealjs/themes.html#creating-themes)) -->
-
-<!-- ::: {layout-ncol="2"} -->
-<!-- ![](images/moon.png) -->
-
-<!-- ![](images/sky.png) -->
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Themes](https://quarto.org/docs/presentations/revealjs/themes.html) -->
-<!-- ::: -->
-
-<!-- ## Easy Navigation -->
-
-<!-- ::: {style="margin-bottom: 0.9em;"} -->
-<!-- Quickly jump to other parts of your presentation -->
-<!-- ::: -->
-
-<!-- ::: {layout="[1, 20]"} -->
-<!-- ![](images/presentation-menu.png){width="41"} -->
-
-<!-- Toggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools. -->
-<!-- ::: -->
-
-<!-- You can also press `m` to toggle the menu open and closed. -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Navigation](https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu) -->
-<!-- ::: -->
-
-<!-- ## Chalkboard {chalkboard-buttons="true"} -->
-
-<!-- ::: {style="margin-bottom: 0.9em;"} -->
-<!-- Free form drawing and slide annotations -->
-<!-- ::: -->
-
-<!-- ::: {layout="[1, 20]"} -->
-<!-- ![](images/presentation-chalkboard.png){width="41"} -->
-
-<!-- Use the chalkboard button at the bottom left of the slide to toggle the chalkboard. -->
-<!-- ::: -->
-
-<!-- ::: {layout="[1, 20]"} -->
-<!-- ![](images/presentation-notes-canvas.png){width="41"} -->
-
-<!-- Use the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide. -->
-<!-- ::: -->
-
-<!-- You can also press `b` to toggle the chalkboard or `c` to toggle the notes canvas. -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Chalkboard](https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard) -->
-<!-- ::: -->
-
-<!-- ## Point of View -->
-
-<!-- Press `o` to toggle overview mode: -->
-
-<!-- ![](images/overview-mode.png){.border} -->
-
-<!-- Hold down the `Alt` key (or `Ctrl` in Linux) and click on any element to zoom towards it---try it now on this slide. -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Overview Mode](https://quarto.org/docs/presentations/revealjs/presenting.html#overview-mode), [Slide Zoom](https://quarto.org/docs/presentations/revealjs/presenting.html#slide-zoom) -->
-<!-- ::: -->
-
-<!-- ## Speaker View -->
-
-<!-- Press `s` (or use the presentation menu) to open speaker view -->
-
-<!-- ![](images/speaker-view.png){fig-align="center" style="border: 3px solid #dee2e6;" width="780"} -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Speaker View](https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view) -->
-<!-- ::: -->
-
-<!-- ## Authoring Tools {.smaller} -->
-
-<!-- Live side-by-side preview for any notebook or text editor including Jupyter and VS Code -->
-
-<!-- ::: columns -->
-<!-- ::: {.column width="50%"} -->
-<!-- ![](images/jupyter-edit.png){.border .border-thick} -->
-<!-- ::: -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- ![](images/jupyter-preview.png){.border .border-thick} -->
-<!-- ::: -->
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Jupyter](https://quarto.org/docs/tools/jupyter-lab.html), [VS Code](https://quarto.org/docs/tools/vscode.html), [Text Editors](https://quarto.org/docs/tools/text-editors.html) -->
-<!-- ::: -->
-
-<!-- ## Authoring Tools {.smaller} -->
-
-<!-- RStudio includes an integrated presentation preview pane -->
-
-<!-- ![](images/rstudio.png){.border width="900"} -->
-
-<!-- ::: footer -->
-<!-- Learn more: [RStudio](https://quarto.org/docs/tools/rstudio.html) -->
-<!-- ::: -->
-
-<!-- ## And More... -->
-
-<!-- -   [Touch](https://quarto.org/docs/presentations/revealjs/advanced.html#touch-navigation) optimized (presentations look great on mobile, swipe to navigate slides) -->
-<!-- -   [Footer & Logo](https://quarto.org/docs/presentations/revealjs/#footer-logo) (optionally specify custom footer per-slide) -->
-<!-- -   [Auto-Slide](https://quarto.org/docs/presentations/revealjs/presenting.html#auto-slide) (step through slides automatically, without any user input) -->
-<!-- -   [Multiplex](https://quarto.org/docs/presentations/revealjs/presenting.html#multiplex) (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop). -->
-
-<!-- ::: footer -->
-<!-- Learn more: [Quarto Presentations](https://quarto.org/docs/presentations/revealjs/) -->
-<!-- ::: -->
-
+::: {.column width="50%"}
+**Solution**
+:::
+:::
